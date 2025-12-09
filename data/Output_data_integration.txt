@@ -1,0 +1,13 @@
+
+Pre <- read.csv("/GSE192575_human_Cisplatin.csv")
+colnames(Pre) <- c("ID","AUC")
+rownames(Pre) <- Pre$ID
+alldata <- AddMetaData(object = alldata, metadata = Pre)
+
+alldata$AUC <- ifelse(alldata$AUC == 0, "Sensitive",
+                  ifelse(alldata$AUC == 1, "Resistant","Unknown"))
+
+
+
+
+

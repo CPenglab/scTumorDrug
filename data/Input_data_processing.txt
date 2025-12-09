@@ -1,0 +1,54 @@
+
+
+
+
+###########human
+
+#The input data is a Seurat object.
+#alldata[["RNA"]] <- as(object = alldata[["RNA"]], Class = "Assay")  If it is Seurat v5, please add the following line of code.
+Idents(alldata) <- 'orig.ident'
+
+Res <- subset(alldata,idents = "Res")
+write.csv(t(as.matrix(Res@assays$RNA@counts)),file = paste0("/Res_count.csv"))
+
+Sen <- subset(alldata,idents = "Sen")
+write.csv(t(as.matrix(Sen@assays$RNA@counts)),file = paste0("/Sens_count.csv"))
+
+
+###########mouse
+
+
+
+#The input data is a Seurat object.
+#alldata[["RNA"]] <- as(object = alldata[["RNA"]], Class = "Assay")  If it is Seurat v5, please add the following line of code.
+Idents(alldata) <- 'orig.ident'
+
+Res <- subset(alldata,idents = "Res")
+write.csv(t(as.matrix(Res@assays$RNA@counts)),file = paste0("/Res_count.csv"))
+counts <- read.csv("/Res_count.csv",row.names=1)
+colnames(counts) <- toupper(colnames(counts))
+write.csv(counts,file = "/Res_count.csv")
+
+Sen <- subset(alldata,idents = "Sen")
+write.csv(t(as.matrix(Sen@assays$RNA@counts)),file = paste0("/Sen_count.csv"))
+counts <- read.csv("/Sen_count.csv",row.names=1)
+colnames(counts) <- toupper(colnames(counts))
+write.csv(counts,file = "/Sen_count.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157220
+
+
+
+
+##################R
+
+GSE157220_CPM_data <- read.table("/data/GSE157220_CPM_data.txt", 
+                                header = TRUE,  # 第一行作为列名
+                                row.names = 1,  # 第一列作为行名
+                                check.names = FALSE)
+saveRDS(GSE157220_CPM_data, "data/GSE157220_CPM_matrix.rds")
