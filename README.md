@@ -1,11 +1,6 @@
 # scTumorDrug
 In this work, we integrated the labeled scRNA-seq, bulk RNA and drug response data to develop the computational tool scTumorDrug to predict cell-type specific drug responses for heterogeneous tumors. We systematically evaluated scTumorDrug by using different kinds of public datasets, including cell lines, mouse model and clinical human samples.
 
-## Overview of scTumorDrug framework
-<div align="center">
-<img src="https://github.com/CPenglab/scTumorDrug/blob/main/fig1.jpg" width="500px">
-</div>
-
 ## Installation
 The software is a stand-alone python script package. The home directory of scTumorDrug can be cloned from the GitHub repository:
 
